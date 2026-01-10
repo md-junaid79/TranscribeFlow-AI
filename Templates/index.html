@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TranscribeFlow - Audio Transcript Summarizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">🎧 TranscribeFlow</h1>
+      <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="subtitle">AI-powered Audio Transcription & Summarization</p>
+
+    <div class="upload-section">
+      <div class="upload-box">
+        <label for="audioFile" class="file-label">
+          <input type="file" id="audioFile" accept="audio/*" class="file-input">
+          <span class="file-text">📁 Choose audio file or drag & drop</span>
+        </label>
+        <button class="btn btn-primary" onclick="processAudio()">🚀 Transcribe</button>
+      </div>
+      <p class="file-hint">Supported formats: MP3, WAV, M4A, FLAC, OGG</p>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>⏳ Processing audio with AI...</p>
+    </div>
+
+    <div class="output">
+      <div class="card">
+        <div class="card-header">
+          <h2>📝 Transcript</h2>
+          <button class="copy-btn" onclick="copyToClipboard('transcript')" title="Copy transcript">📋</button>
+        </div>
+        <p id="transcript" class="card-content">Your transcript will appear here...</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>✨ AI Summary</h2>
+          <button class="copy-btn" onclick="copyToClipboard('summary')" title="Copy summary">📋</button>
+        </div>
+        <p id="summary" class="card-content">AI-generated summary will appear here...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Made with ❤️ by TranscribeFlow AI</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
